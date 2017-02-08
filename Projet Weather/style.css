@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+header{
+    border-bottom: 1px groove black;
+    text-align: center;
+}
+
+h1{
+    font-size: 3.2em;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+section{
+
+}
+
+footer{
+    border: 1px groove black;
+
+}
+
+table{
+    border: 1px groove black;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+th{
+    width:0%;
+    
+}
+
+tr{
+    border: 1px groove black;
+}
+
+section{
+   
+}
+
+#conteneur{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 11%;
+    margin-top: 5%
+}
+
+#temp,#pression,#humidité{
+    margin: 3%;
+
+}
+
+#temp{
+
+}
+
+#pression{
+
+}
+
+#humidité{
+
+}
+
