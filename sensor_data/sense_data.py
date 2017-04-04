@@ -7,7 +7,7 @@ import time
 
 sense = SenseHat()
 
-db = MySQLdb.connect(host="localhost", user="root", passwd="123abc", db="domotic_project")
+db = MySQLdb.connect(host="192.168.99.70", user="sensor_station", passwd="", db="domotic_project")
 cur = db.cursor()
 
 cptMaj=0
