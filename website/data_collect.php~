@@ -1,0 +1,12 @@
+<?php
+try
+{
+	$bdd=new PDO('mysql:host=localhost;dbname=domotic_project;charset=utf8','sensor_station','');
+}
+catch(Exception $e)
+{
+	die('Error: '.$e->getMessage());
+}
+
+
+?>
