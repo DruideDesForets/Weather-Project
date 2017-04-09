@@ -23,24 +23,26 @@ while(len_maison + nb_pts_intervalle<1488):
     r = random.randrange(3)
     len_maison += nb_pts_intervalle
     if(r == 1):
-        temp_maison=temp_maison+generator.suite_croissante(nb_pts_intervalle,0.05, temp)
+        temp_maison=temp_maison+generator.suite_croissante(nb_pts_intervalle,0.01, temp)
     if (r == 2):
-        temp_maison=temp_maison+generator.suite_decroissante(nb_pts_intervalle,0.05, temp)
+        temp_maison=temp_maison+generator.suite_decroissante(nb_pts_intervalle,0.01, temp)
     if (r == 3):
-        temp_maison=temp_maison+generator.suite_constante(nb_pts_intervalle,0.01, temp)
-
+    temp_maison=temp_maison+generator.suite_constante(nb_pts_intervalle,0.01, temp)
+    temp= temp_maison[-1]
+    
 for i in range(1488 - len(temp_maison)):
     r = random.randrange(3)
     if(r == 1):
-        temp_maison=temp_maison+generator.suite_croissante(nb_pts_intervalle,0.05, temp)
+        temp_maison=temp_maison+generator.suite_croissante(nb_pts_intervalle,0.01, temp)
     if (r == 2):
-        temp_maison=temp_maison+generator.suite_decroissante(nb_pts_intervalle,0.05, temp)
+        temp_maison=temp_maison+generator.suite_decroissante(nb_pts_intervalle,0.01, temp)
     if (r == 3):
-        temp_maison=temp_maison+generator.suite_constante(nb_pts_intervalle,0.01, temp)
+        temp_maison=temp_maison+generator.suite_constante(nb_pts_intervalle,0, temp)
+    temp= temp_maison[-1]
         
 print temp_maison
 print len(temp_maison)
-for i in xrange(len(temp_maison)):
+for i in xrange(1488):
     date=date + delta
     infoMaison={"temperature": temp_maison[i], "pressure": 1, "humidity": 2, "date":date}
     infoJardin={"temperature": 1, "pressure": 2, "humidity": 4, "date":date}

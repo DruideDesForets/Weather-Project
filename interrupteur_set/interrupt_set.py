@@ -20,14 +20,14 @@ list_interrupt.append(chambre_chevet)
 list_interrupt.append(salon_tele)
 
 while True:
-    db = MySQLdb.connect(host="localhost", user="root", passwd="123abc", db="domotic_project")
+    db = MySQLdb.connect(host="localhost", user="switch_setter", passwd="", db="domotic_project")
     cur = db.cursor()
-    cur.execute("""SELECT * FROM interrupteurs""")
+    cur.execute("""SELECT * FROM switches""")
     i=0
     for row in cur.fetchall():
-        if (row[3] == 'true'):
+        if (row[2] == 1):
             list_interrupt[i].on()
-        elif (row[3] == 'false') :
+        elif (row[2] == 0):
             list_interrupt[i].off()
         i+=1
     cur.close()
