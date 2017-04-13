@@ -1,4 +1,4 @@
-    <aside>
+    <aside class="container">
 
     <?php
 try
@@ -14,7 +14,7 @@ $req=$bdd->query('SELECT * FROM switches');
     ?>
 
     <form method="post" action="switches_post.php">
-    <label>SET SWITCHES:</label>
+    <label>SET SWITCHES:</label> <br />
     <select name="select">
     <?php
 while($donnees=$req->fetch()){

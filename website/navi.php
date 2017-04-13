@@ -1,4 +1,4 @@
-    <aside>
+    <aside class="container">
 
     <?php
 try
@@ -14,8 +14,10 @@ $req=$bdd->query('SELECT * FROM switches');
     ?>
 
     <form method="post" action="switches_post.php">
-    <label>SET SWITCHES:</label>
-    <select name="select" multiple>
+    <div id="clock_container"></div>
+    <?php include 'clock.php'; ?>
+    <label><h2>SET SWITCHES<h2></label> <br />
+    <select name="select">
     <?php
 while($donnees=$req->fetch()){
     echo '<option value="'.htmlspecialchars($donnees['id']).'">'.htmlspecialchars($donnees['lieu']).'-'.htmlspecialchars($donnees['name']).'</option>';
