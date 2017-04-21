@@ -1,12 +1,13 @@
 @charset "UTF-8";
 /*======GLOBAL SETTINGS======*/
 body{
-    background-color:#A1A8B2 ;
+    background-color: #546B85;
 
 }
 
 h1{
     text-align: center;
+    color: white;
 }
 
 
@@ -17,10 +18,10 @@ h1{
     margin-right: 5%;
     border-radius: 10px 0px 10px 0px;
     padding: 1%;
-    background-color: #A1A8B2;
+    background-color: green;
 }
 
-#skeleton h2{
+h2{
     text-decoration: none;
     font-size: 1em;
 }
@@ -32,36 +33,69 @@ h1{
 
 /*======NAV SETTINGS======*/
 .nav {
-    border:1px groove black;
     list-style-type: none;
-    margin-left: 5%;
-    margin-right: 5%;
+    overflow: hidden;
+    margin-left:22%;
+    background-color: white;
+    border-radius: 20px 5px 20px 5px;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: whitesmoke;
-    border-radius: 30px 10px 30px 10px;
+    background-color: #333;
 }
 
-.nav li{
-    margin-left: 3%;
+.nav li {
     float: left;
-    width:17%;
-
-
+    display:block;
+    padding: 15px 0px 15px 0px;
 }
 
-.nav li a{
-    display: block;
+
+.nav li a, dropbtn{
+    display: inline-block;
+    color: #546B85;
     text-align: center;
-    color: black;
+    padding: 10% 40px 10% 40px;
     text-decoration: none;
-    padding: 14px;
-    border-radius: 10px 10px 10px 10px;
 }
 
-.nav li a:hover{
-    background-color:#f2d10d ;
-    transition: 1s;
+.nav li a:hover, overviews:hover .dropbtn{
+    background-color:#546B85;
+    color:white;
+    transition: 0.3s;
+    padding-right: 100px;
+}
+
+.nav .overviews{
+    display: inline-block;
+}
+
+.nav .overviews-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.nav .overviews-content a{
+    color: #546B85;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.nav .overviews-content a:hover {
+    background-color: #546B85;
+}
+
+.nav .overviews:hover .overviews-content {
+    display: block;
 }
 
 /*======ALIGN ASIDE/SECTION=======*/
@@ -77,30 +111,25 @@ h1{
 
 /*======ASIDE SETTING======*/
 aside{
-    border:1px groove black;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 2%;
     border-radius: 20px 8px 20px 10px;
     float: left;
     font-size: 1.5em;
-    width: 18%;
+    width: 17.5%;
+    margin-top: 0%;
 }
-aside img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-    height: 75%;
-}
+
 aside label{
     text-align: center;
+    color: #546B85;
 }
 
 aside select{
    height: 40px;
    overflow: hidden;
    width: 240;
-   background: #f2d10d;
+   background: #546B85;
 
    font-size: 14px;
    height: 29px;
@@ -112,23 +141,59 @@ aside select{
 /*======SECTION SETTING======*/
 
 section{
-    border:1px groove black;
+
     margin-left: 20%;
     text-align: center;
     border-radius: 10px 20px 10px 20px;
     background-color: white;
 }
 
+section h2{
+    color: #546B85;
+    font-size: 2em;
+}
+
 #liste{
     list-style-type: none;
 }
 
-#press_value{
+#press_value, 
+#temp_value,
+#hum_value
+{
     width: 33%;
     height: 95%;
+    margin:auto;
 }
 
+
+#container_values{
+    display: flex;
+ 
+    border-style: solid hidden solid hidden;
+    border-width: 15px;
+    border-color: #546B85;
+}
+
+#history{
+    border-style: solid hidden hidden hidden;
+    border-width: 15px;
+    border-color: #546B85;
+
+}
 .container_chart{
     width: 96%;
     height: 33%;
+}
+
+.container_settings{
+    display: flex;
+    border-style: solid hidden solid hidden;
+    border-width: 15px;
+    border-color: #546B85;
+}
+
+.container_settings div{
+    margin: auto;
+    font-size: 1.2em;
 }

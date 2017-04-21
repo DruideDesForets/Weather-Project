@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+    
+    <?php include '../../skeleton.php'; ?>
+    
+    <!-- ======HEADER====== -->
+    
+    <header>
+      <h1 id="titre">Settings</h1>
+    </header>
+
+    
+
+    <!-- ======SECTION====== -->
+
+    <div id="container">
+      <section class="container">
+	<h2>Add</h2>
+	<div class="container_settings">
+	  <div>
+	    <?php include 'add_station.php'; ?>
+	  </div>
+	  <div>
+	    <?php include 'add_sensor.php'; ?>
+	  </div>
+	</div>
+	<h2>remove/delete</h2>
+        <div class="container_settings">
+	  <div>
+	    <?php include 'delete_station.php'; ?>
+	  </div>
+	  <div>
+	    <?php include 'remove_sensor.php'; ?>
+	  </div>
+	</div>
+      </section>
+
+    </div>
+
+  </body>
+</html>

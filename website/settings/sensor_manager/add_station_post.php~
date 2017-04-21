@@ -1,0 +1,33 @@
+    <?php
+try
+{
+    $bdd=new PDO('mysql:host=localhost;dbname=domotic_project;charset=utf8','admin','');
+}
+catch(Exception $e)
+{
+    die('Error: '.$e->getMessage());
+}
+$temperature=0;
+$pressure=0;
+$humidity=0;
+if (isset($_POST['temperature']) && $_POST['temperature'] == 'on'){
+   $temperature=1;
+   }
+
+if (isset($_POST['pressure']) && $_POST['pressure'] == 'on'){
+   $pressure=1;
+   }
+
+if (isset($_POST['humidity']) && $_POST['humidity'] == 'on'){
+   $humidity=1;
+   }
+$req=$bdd->prepare('INSERT INTO station_list(name, temperature, pressure, humidity) VALUES (:name, :temperature, :pressure, :humidity)');
+$req->execute(array(
+	'name' => $_POST['name'],
+	'temperature' => $temperature,
+	'pressure' => $pressure,
+	'humidity' => $humidity
+	));
+
+header('location:index.php');
+    ?>
