@@ -20,14 +20,14 @@ if (isset($_POST['pressure']) && $_POST['pressure'] == 'on'){
     $req=$bdd->prepare('UPDATE station_list SET pressure=0 WHERE name=?');
     $req->execute(array($_POST['select']));
     if ($_POST['data'] == 'delete'){
-	$req=$bdd->query('UPDATE '.$_POST['select'].' SET pressure=NULL');
+	$req=$bdd->query('UPDATE '.$_POST['select'].' SET temperature=NULL');
     }
 }
 if (isset($_POST['humidity']) && $_POST['humidity'] == 'on'){
     $req=$bdd->prepare('UPDATE station_list SET humidity=0 WHERE name=?');
     $req->execute(array($_POST['select']));
     if ($_POST['data'] == 'delete'){
-	$req=$bdd->query('UPDATE '.$_POST['select'].' SET humidity=NULL');
+	$req=$bdd->query('UPDATE '.$_POST['select'].' SET temperature=NULL');
     }
 }
 header('location:index.php');

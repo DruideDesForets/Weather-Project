@@ -11,8 +11,8 @@ catch(Exception $e)
 {
 	die('Error: '.$e->getMessage());
 }
-$req_pressure=$bdd->query('SELECT pressure, id FROM '.$select['name']);
-$n_pressure=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name']);
+$req_pressure=$bdd->query('SELECT pressure, id FROM '.$select['name'].' WHERE pressure IS NOT NULL');
+$n_pressure=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name'].' WHERE pressure IS NOT NULL');
 
 echo '<script>';
 

@@ -11,32 +11,31 @@ catch(Exception $e)
 {
 	die('Error: '.$e->getMessage());
 }
-$req_humidity=$bdd->query('SELECT humidity, id FROM '.$select['name'].' WHERE humidity IS NOT NULL');
-$n_humidity=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name'].' WHERE humidity IS NOT NULL');
-
+$req_pressure=$bdd->query('SELECT pressure, id FROM '.$select['name']);
+$n_pressure=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name']);
 
 echo '<script>';
 
-echo 'var humidity = [';
+echo 'var pressure = [';
 $i=0;
-$n=$n_humidity->fetch();
-while($data=$req_humidity->fetch()){
+$n=$n_pressure->fetch();
+while($data=$req_pressure->fetch()){
     $i++;
-    echo '['.$data['id'].','.$data['humidity'].']';
+    echo '['.$data['id'].','.$data['pressure'].']';
     if ($i != $n){
 	echo ', ';
     }
 }
 echo '];';
-$req_humidity->closeCursor();
+$req_pressure->closeCursor();
 
     ?>
-    Highcharts.chart('container_humidity', {
+    Highcharts.chart('container_pressure', {
         chart: {
             zoomType: 'x'
         },
         title: {
-            text: 'Humidity'
+            text: 'Pressure'
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
@@ -44,7 +43,7 @@ $req_humidity->closeCursor();
         },
         yAxis: {
             title: {
-                text: 'Humidity'
+                text: 'Pressure'
             }
         },
         legend: {
@@ -60,8 +59,8 @@ $req_humidity->closeCursor();
                         y2: 1
                     },
                     stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        [0, Highcharts.getOptions().colors[2]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0).get('rgba')]
                     ]
                 },
                 marker: {
@@ -79,11 +78,14 @@ $req_humidity->closeCursor();
 
         series: [{
             type: 'area',
-            name: 'humidity',
-            data: humidity,
-            color: 'blue'
-     }]      
+            name: 'pressure',
+            data: pressure,
+            color: 'green'
+        }]
+                     
                      
     });
+
+
 
 </script>

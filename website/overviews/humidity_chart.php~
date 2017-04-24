@@ -11,8 +11,8 @@ catch(Exception $e)
 {
 	die('Error: '.$e->getMessage());
 }
-$req_humidity=$bdd->query('SELECT humidity, id FROM '.$select['name'].' WHERE humidity IS NOT NULL');
-$n_humidity=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name'].' WHERE humidity IS NOT NULL');
+$req_humidity=$bdd->query('SELECT humidity, id FROM '.$select['name']);
+$n_humidity=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name']);
 
 
 echo '<script>';

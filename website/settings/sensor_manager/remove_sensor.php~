@@ -12,8 +12,8 @@ $req=$bdd->query('SELECT * FROM station_list');
     ?>
 
 <form action="remove_sensor_post.php" method="post">
-    <label><h3>Remove sensors to station<h3></label> <br />
-    Which station<br>
+    <label><h3>Remove sensors to station</h3></label> <br />
+    <p>Which station</p><br>
     <select name="select">
     <?php
     while($donnees=$req->fetch()){
@@ -38,6 +38,12 @@ $req=$bdd->query('SELECT * FROM station_list');
     <input type="checkbox" name="pressure"/> <label for="pressure">Pressure</label>
     <br>
     <input type="checkbox" name="humidity"/> <label for="humidity">Humidity</label>
+    <br>
+    <p>Keep or delete data ?</p>
+    <input type="radio" name="data" value="keep" checked="checked" />
+    <label for="keep">Keep</label>
+    <input type="radio" name="data" value="delete" />
+    <label for="delete">Delete</label>
     <br>
     <br>
     <input type="submit" value="Remove">
