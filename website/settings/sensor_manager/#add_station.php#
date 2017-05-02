@@ -23,19 +23,19 @@
 
 
 var validName = function(){
-    
+    var reg = /^[a-zA-Z_]+[a-zA-Z0-9_]*$/;
     var name = document.forms["form"]["name"].value;
-    
+    alert("bonjou");
     if (reg.test(name) === false){
 	name.style.border="3px groove red";
+	alert("false");
+	return false;
     }
     else{
 	name.style.border="3px groove green";
     }
 }
 
-form.addEventListener("blur",verifName);
-form.addEventListener("focus",verifName);
 
     </script>
     

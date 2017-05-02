@@ -13,16 +13,10 @@ catch(Exception $e)
 $req=$bdd->query('SELECT * FROM switches');
     ?>
 
-
-    <div id="clock_container"></div>
-    <?php include 'clock.php';
-
-$date = date_create('2000-01-01');
-echo '<div class="date">'.date('d/m/y').'</div>';
-    ?>
-    <br>
     <form method="post" action="/website/switches_post.php">
-    <label><h2 class="set_switches">SET SWITCHES<h2></label>
+    <div id="clock_container"></div>
+    <?php include 'clock.php'; ?>
+    <label><h2>SET SWITCHES<h2></label> <br />
     <select name="select">
     <?php
 while($donnees=$req->fetch()){

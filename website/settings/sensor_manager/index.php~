@@ -7,7 +7,7 @@
     <!-- ======HEADER====== -->
     
     <header>
-      <h1 id="title">Settings</h1>
+      <h1 id="titre">Settings</h1>
     </header>
 
     
@@ -16,7 +16,7 @@
 
     <div id="container">
       <section class="container">
-	<h2 >Add sensors/stations</h2>
+	<h2>Add sensors/stations</h2>
 	<div class="container_settings">
 	  <div>
 	    <?php include 'add_station.php'; ?>

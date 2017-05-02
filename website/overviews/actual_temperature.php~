@@ -11,9 +11,7 @@ catch(Exception $e)
 {
     die('Error: '.$e->getMessage());
 }
-$req=$bdd->query('SELECT COUNT(*) as n FROM '.$select['name'].' WHERE temperature IS NOT NULL');
-$d=$req->fetch();
-$req=$bdd->query('SELECT temperature FROM '.$select['name'].' WHERE id='.$d['n']);
+$req=$bdd->query('SELECT temperature FROM '.$select['name'].' WHERE id=1');
 $temperature=$req->fetch();
 $req->closeCursor();
     ?>

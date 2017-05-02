@@ -11,8 +11,8 @@ catch(Exception $e)
 {
 	die('Error: '.$e->getMessage());
 }
-$req_temperature=$bdd->query('SELECT temperature, id FROM '.$select['name']);
-$n_temperature=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name']);
+$req_temperature=$bdd->query('SELECT temperature, id FROM '.$select['name'].' WHERE temperature IS NOT NULL');
+$n_temperature=$bdd->query('SELECT COUNT(*) AS n FROM '.$select['name'].' WHERE temperature IS NOT NULL');
 
 echo '<script>';
 
@@ -44,6 +44,11 @@ $req_temperature->closeCursor();
         yAxis: {
             title: {
                 text: 'Temperature'
+            }
+        },
+	xAxis: {
+            title: {
+                text: 'Steps'
             }
         },
         legend: {

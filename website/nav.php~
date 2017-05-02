@@ -25,9 +25,8 @@ while($donnees=$req->fetch()){
     </div>
     </li>
   <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Statistics</a>
+    <a href="/website/statistics/index.php" class="dropbtn">Statistics</a>
     <div class="dropdown-content">
-    <a href="/website/statistics/index.php">Global</a>
     <?php
 $req=$bdd->query('SELECT * FROM station_list');
 while($donnees=$req->fetch()){

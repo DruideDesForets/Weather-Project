@@ -33,19 +33,48 @@ $req_humidity->closeCursor();
     ?>
     Highcharts.chart('container_humidity', {
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+	    backgroundColor: '#546B85'
         },
         title: {
-            text: 'Humidity'
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    'Select and drag to zoom' : 'Pinch the chart to zoom in'
+            text: 'humidity',
+	    style: {
+             color: 'white',
+             textTransform: 'uppercase',
+             fontSize: '50px'
+	 }
+
         },
         yAxis: {
             title: {
-                text: 'Humidity'
-            }
+                text: 'Humidity',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
+	
+	},
+	xAxis: {
+            title: {
+                text: 'Steps',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
         },
         legend: {
             enabled: false
@@ -60,7 +89,7 @@ $req_humidity->closeCursor();
                         y2: 1
                     },
                     stops: [
-                        [0, Highcharts.getOptions().colors[0]],
+                        [0, Highcharts.getOptions().colors[7]],
                         [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                     ]
                 },
@@ -81,9 +110,12 @@ $req_humidity->closeCursor();
             type: 'area',
             name: 'humidity',
             data: humidity,
-            color: 'blue'
-     }]      
+            color: '#0099ff'
+	    }]
+                     
                      
     });
+
+
 
 </script>

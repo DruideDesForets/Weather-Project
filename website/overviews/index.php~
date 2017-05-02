@@ -17,7 +17,7 @@ if(isset($_GET['name'])){
     $select = $req->fetch();
     $req->closeCursor();
     include '../skeleton.php';
-    echo '<h1 id="title">'.$select['name'].'</h1><p class="freq">One step each '.$select['frequency'].' second(s)</p><br>';
+    echo '<h1 id="title">'.$select['name'].'</h1>';
 	?>
 
     

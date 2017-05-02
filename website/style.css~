@@ -10,16 +10,6 @@ h1{
     color: white;
 }
 
-p, #liste{
-    color:white;
-}
-
-
-.freq{
-    color:white;
-    float: right;
-    margin-right: 4%;
-}
 
 #title{
     font-size: 3em;

@@ -11,7 +11,9 @@ catch(Exception $e)
 {
     die('Error: '.$e->getMessage());
 }
-$req=$bdd->query('SELECT humidity FROM '.$select['name'].' WHERE id=1');
+$req=$bdd->query('SELECT COUNT(*) as n FROM '.$select['name'].' WHERE humidity IS NOT NULL');
+$d=$req->fetch();
+$req=$bdd->query('SELECT humidity FROM '.$select['name'].' WHERE id='.$d['n']);
 $humidity=$req->fetch();
 $req->closeCursor();
     ?>
@@ -20,14 +22,18 @@ $req->closeCursor();
 
 	chart: {
             type: 'gauge',
-            plotBackgroundColor: null,
-            plotBackgroundImage: null,
+	    backgroundColor: '#546B85',
             plotBorderWidth: 0,
             plotShadow: false
 	},
 
 	title: {
-            text: 'Humidity'
+            text: 'Humidity',
+	    style: {
+		color: 'white',
+		textTransform: 'uppercase',
+		fontSize: '30px'	
+	    }
 	},
 
 	pane: {

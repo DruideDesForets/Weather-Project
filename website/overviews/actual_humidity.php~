@@ -11,14 +11,12 @@ catch(Exception $e)
 {
     die('Error: '.$e->getMessage());
 }
-$req=$bdd->query('SELECT COUNT(*) as n FROM '.$select['name'].' WHERE temperature IS NOT NULL');
-$d=$req->fetch();
-$req=$bdd->query('SELECT temperature FROM '.$select['name'].' WHERE id='.$d['n']);
-$temperature=$req->fetch();
+$req=$bdd->query('SELECT humidity FROM '.$select['name'].' WHERE id=1');
+$humidity=$req->fetch();
 $req->closeCursor();
     ?>
     <script>
-    Highcharts.chart('temp_value', {
+    Highcharts.chart('hum_value', {
 
 	chart: {
             type: 'gauge',
@@ -28,7 +26,7 @@ $req->closeCursor();
 	},
 
 	title: {
-            text: 'Thermometer',
+            text: 'Humidity',
 	    style: {
 		color: 'white',
 		textTransform: 'uppercase',
@@ -72,7 +70,7 @@ $req->closeCursor();
 	// the value axis
 	yAxis: {
             min: 0,
-            max: 40,
+            max: 100,
 
             minorTickInterval: 'auto',
             minorTickWidth: 1,
@@ -90,59 +88,30 @@ $req->closeCursor();
 		rotation: 'auto'
             },
             title: {
-		text: 'Temperature'
+		text: 'Humidity'
             },
             plotBands: [{
-		from: 0,
-		to: 5,
-		color: '#e2effd'
-            },
-			{
-			    from: 5,
-			    to: 10,
-			    color: '#9ed5f0' 
+			    from: 0,
+			    to: 33,
+			    color: '#bddbf6'
 			},
 			{
-			    from: 10,
-			    to: 15,
-			    color: '#b7f6a9' 
+			    from: 33,
+			    to: 67,
+			    color: '#96c2ea'
 			},
 			{
-			    from: 15,
-			    to: 20,
-			    color: '#abf048'
-			},
-			{
-			    from: 20,
-			    to: 25,
-			    color: '#d3f650'
-			},
-			{
-			    from: 25,
-			    to: 30,
-			    color: '#ecb229'
-			},
-			{
-			    from: 30,
-			    to: 35,
-			    color: '#f69431'
-			},
-			
-			{
-			    from: 35,
-			    to: 40,
-			    color: '#ee3e1f'
-			}
-
-
-		       ]
+			    from: 67,
+			    to: 100,
+			    color: '#589fe1'
+			}]
 	},
 
 	series: [{
-            name: 'Temperature',
-            data: [<?php echo $temperature['temperature']; ?>],
+            name: 'Humidity',
+            data: [<?php echo $humidity['humidity']; ?>],
             tooltip: {
-		valueSuffix: ' °C'
+		valueSuffix: ' %'
             }
 	}]
 

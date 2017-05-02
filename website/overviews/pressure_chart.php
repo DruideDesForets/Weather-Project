@@ -32,19 +32,48 @@ $req_pressure->closeCursor();
     ?>
     Highcharts.chart('container_pressure', {
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+	    backgroundColor: '#546B85'
         },
         title: {
-            text: 'Pressure'
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    'Select and drag to zoom' : 'Pinch the chart to zoom in'
+            text: 'pressure',
+	    style: {
+             color: 'white',
+             textTransform: 'uppercase',
+             fontSize: '50px'
+	 }
+
         },
         yAxis: {
             title: {
-                text: 'Pressure'
-            }
+                text: 'Pressure',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
+	
+	},
+	xAxis: {
+            title: {
+                text: 'Steps',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
         },
         legend: {
             enabled: false
@@ -60,7 +89,7 @@ $req_pressure->closeCursor();
                     },
                     stops: [
                         [0, Highcharts.getOptions().colors[2]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0).get('rgba')]
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0).get('rgba')]
                     ]
                 },
                 marker: {
@@ -81,7 +110,7 @@ $req_pressure->closeCursor();
             name: 'pressure',
             data: pressure,
             color: 'green'
-        }]
+	    }]
                      
                      
     });
