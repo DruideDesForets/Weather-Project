@@ -63,7 +63,7 @@ $global_avg= round($global_avg, 2);
 echo 'var average = '.$global_avg.';';
 ?>
 Highcharts.chart('container_stat_hum', {
-    colors: ['white'],
+    colors: ['#44D2FD'],
     chart: {
         type: 'boxplot',
         backgroundColor: {

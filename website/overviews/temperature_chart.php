@@ -109,7 +109,7 @@ $req_temperature->closeCursor();
             type: 'area',
             name: 'temperature',
             data: temperature,
-            color: 'orange'
+            color: '#e2f705'
 	    }]
                      
                      

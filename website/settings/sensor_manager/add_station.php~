@@ -1,7 +1,7 @@
-    <form method="post" action="add_station_post.php">
+    <form id="form" method="post" action="add_station_post.php" onsubmit="return validName()">
     <label><h3>Add a station</h3></label> <br />
     <p>Name</p><br>
-    <input type="text" name="name">
+    <input id="name" type="text" name="name">
     <br>
     <br>
     <input type="checkbox" name="temperature" checked="checked"/> <label for="temperature">Temperature</label>
@@ -16,3 +16,26 @@
     <input type="submit" value="Add">
     </form> 
     <br>
+
+    <script>
+
+
+
+
+var validName = function(){
+    
+    var name = document.forms["form"]["name"].value;
+    
+    if (reg.test(name) === false){
+	name.style.border="3px groove red";
+    }
+    else{
+	name.style.border="3px groove green";
+    }
+}
+
+form.addEventListener("blur",verifName);
+form.addEventListener("focus",verifName);
+
+    </script>
+    

@@ -109,7 +109,7 @@ $req_pressure->closeCursor();
             type: 'area',
             name: 'pressure',
             data: pressure,
-            color: 'green'
+            color: '#00ff6b'
 	    }]
                      
                      

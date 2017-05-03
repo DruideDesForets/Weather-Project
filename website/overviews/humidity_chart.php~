@@ -109,7 +109,7 @@ $req_humidity->closeCursor();
         series: [{
             type: 'area',
             name: 'humidity',
-            data: temperature,
+            data: humidity,
             color: '#0099ff'
 	    }]
                      

@@ -45,7 +45,7 @@ echo $d['pressure'].', ';
 echo $min_max['max'].']]; ';//max
 ?>
 Highcharts.chart('container_individual_press', {
-    colors: ['#66C56C'],
+    colors: ['#00ff6b'],
     chart: {
         type: 'boxplot',
         backgroundColor: {

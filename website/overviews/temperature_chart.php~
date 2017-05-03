@@ -32,24 +32,48 @@ $req_temperature->closeCursor();
     ?>
     Highcharts.chart('container_temperature', {
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+	    backgroundColor: '#546B85'
         },
         title: {
-            text: 'Temperature'
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    'Select and drag to zoom' : 'Pinch the chart to zoom in'
+            text: 'Temperature',
+	    style: {
+             color: 'white',
+             textTransform: 'uppercase',
+             fontSize: '50px'
+	 }
+
         },
         yAxis: {
             title: {
-                text: 'Temperature'
-            }
-        },
+                text: 'Temperature',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
+	
+	},
 	xAxis: {
             title: {
-                text: 'Steps'
-            }
+                text: 'Steps',
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+            },
+	    labels: {
+		style: {
+		    color: 'white',
+		    fontSize: '20px'
+		}
+	    }
         },
         legend: {
             enabled: false
@@ -64,8 +88,8 @@ $req_temperature->closeCursor();
                         y2: 1
                     },
                     stops: [
-                        [0, Highcharts.getOptions().colors[5]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[6]).setOpacity(0).get('rgba')]
+                        [0, Highcharts.getOptions().colors[6]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[8]).setOpacity(0).get('rgba')]
                     ]
                 },
                 marker: {
@@ -85,7 +109,7 @@ $req_temperature->closeCursor();
             type: 'area',
             name: 'temperature',
             data: temperature,
-            color: 'purple'
+            color: 'orange'
 	    }]
                      
                      

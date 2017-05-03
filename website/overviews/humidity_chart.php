@@ -110,7 +110,7 @@ $req_humidity->closeCursor();
             type: 'area',
             name: 'humidity',
             data: humidity,
-            color: '#0099ff'
+            color: '#01ffff'
 	    }]
                      
                      

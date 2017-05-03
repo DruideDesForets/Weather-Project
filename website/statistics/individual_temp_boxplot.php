@@ -45,7 +45,7 @@ echo $d['temperature'].', ';
 echo $min_max['max'].']]; ';//max
 ?>
 Highcharts.chart('container_individual_temp', {
-    colors: ['#FDF430'],
+    colors: ['#e2f705'],
     chart: {
         type: 'boxplot',
         backgroundColor: {

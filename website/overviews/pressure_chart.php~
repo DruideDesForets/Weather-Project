@@ -108,7 +108,7 @@ $req_pressure->closeCursor();
         series: [{
             type: 'area',
             name: 'pressure',
-            data: temperature,
+            data: pressure,
             color: 'green'
 	    }]
                      

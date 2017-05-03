@@ -161,8 +161,7 @@ aside select{
 
 section{
 
-    margin-left: 20%;
-    
+
     border-radius: 10px 20px 10px 20px;
     background-color:#546B85 ;
 }

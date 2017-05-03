@@ -21,13 +21,7 @@
       <h3>Welcome to your weather station !</h3><br /><br />
          <p><strong>Overviews : </strong>Look at the differents mesures in your house, such as temperature, pressure humidity with nice charts</p>
     <p><strong>Statistics : </strong>Look at the statistics of your data with nice boxplots</p>
-      <p>
- 
-    </p>
-    <br />
-    <p>
-      
-    </p>
+     <p><strong>Settings : </strong>Manage your weather station </p>
     
   </section>
 

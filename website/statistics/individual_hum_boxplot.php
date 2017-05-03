@@ -45,7 +45,7 @@ echo $d['humidity'].', ';
 echo $min_max['max'].']]; ';//max
 ?>
 Highcharts.chart('container_individual_hum', {
-    colors: ['#44D2FD'],
+    colors: ['#05f9e2'],
     chart: {
         type: 'boxplot',
         backgroundColor: {

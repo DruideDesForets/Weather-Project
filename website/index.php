@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<body>
+<body id="home">
   
   <?php include 'skeleton.php'; ?>
   
@@ -16,17 +16,13 @@
 
   <div id="container">
   <section class="container">
-    
-    <p>
-      Welcome on Weather Station !<br />
-      In our website, you can look at the differents mesures in your house, such as :<br />
-      <ul id="liste">
-	<li>Temperature</li>
-	<li>Humidity</li>
-	<li>Pressure</li>
-      </ul> <br />
-      in differents spaces of your house !
-      
+    <br>
+
+      <h3>Welcome to your weather station !</h3><br>
+         <p><strong>Overviews : </strong>Look at the differents mesures in your house, such as temperature, pressure humidity with nice charts</p><br>
+    <p><strong>Statistics : </strong>Look at the statistics of your data with nice boxplots</p><br>
+      <p>
+     <p><strong>Settings : </strong>Manage your weather station by setting the stations, sensors, and the frequency of measurement</p>
     </p>
     <br />
     <p>
